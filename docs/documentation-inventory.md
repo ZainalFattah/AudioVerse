@@ -15,7 +15,7 @@ This document provides a complete inventory of all required documents for the Au
 
 - **Risk Register**: Missing, blocking the start of the SRS Framework.
 - **SRS (Software Requirements Specification)**: Missing, blocking all architecture and downstream requirements.
-- **SAD (Software Architecture Document)**: Missing, blocking technical design.
+- **SAD (Software Architecture Document)**: Complete.
 
 ## Required Documents Inventory
 
@@ -42,7 +42,7 @@ This document provides a complete inventory of all required documents for the Au
 | 19 | Security, Privacy, and Data Requirements | `docs/security-privacy-data-requirements.md` | Done | Jules | AI Tutor Reqs |
 | 20 | Requirements Traceability Matrix | `docs/requirements-traceability-matrix.md` | Done | Jules | All Requirements |
 | 21 | Architecture Principles and Constraints | `docs/architecture-principles.md` | Done | Jules | Requirements Traceability |
-| 22 | Software Architecture Document | `docs/software-architecture-document.md` | Missing | Jules | Architecture Principles |
+| 22 | Software Architecture Document | `docs/software-architecture-document.md` | Complete | Jules | Architecture Principles |
 | 23 | Modular Engine Architecture | `docs/modular-engine-architecture.md` | Missing | Jules | SAD |
 | 24 | Data Architecture and SQLite Strategy | `docs/data-architecture-sqlite-strategy.md` | Missing | Jules | Modular Engine Arch |
 | 25 | Optional Sync Architecture | `docs/optional-sync-architecture.md` | Missing | Jules | Data Arch |
@@ -75,9 +75,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 9
-- **Missing / Pending**: 41
+- **Completed**: 10
+- **Missing / Pending**: 40
 
 ## Next Steps
 
-1. Create `docs/software-architecture-document.md` (Phase 20).
+1. Create `docs/modular-engine-architecture.md` (Phase 21).
