@@ -107,9 +107,14 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 11. Offline-First Requirements (OFF)
 
+*See [Offline-First Requirements](offline-first-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| OFF-001 | [Placeholder] | | | |
+| OFF-001 | **Core Functionality:** Core learning flows (catalog, playback, practice, local SR/scoring) must function without internet. | High | Realizes the offline-first mandate. | App can complete a full lesson cycle while in airplane mode using downloaded content. |
+| OFF-002 | **Local Progress Persistence:** User progress and settings must instantly save to the local SQLite database. | High | Prevents data loss when offline or closing the app. | Progress is updated locally immediately upon lesson completion and persists after app restart. |
+| OFF-003 | **Content Availability:** Downloaded packages remain accessible indefinitely without server validation. | High | Users should not be locked out of downloaded content if they stay offline for long periods. | Content downloaded months ago opens successfully while offline. |
+| OFF-004 | **Graceful Degradation:** Cloud-dependent features invoked while offline must gracefully degrade or fallback. | High | Prevents UI lockups or crashes when offline. | Attempting a cloud action while offline announces an accessible error/fallback and allows the user to continue. |
 
 ## 12. Audio and Soundscape Requirements (AUD)
 
@@ -143,9 +148,15 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 17. Sync Requirements (SYNC)
 
+*See [Offline-First Requirements](offline-first-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| SYNC-001 | [Placeholder] | | | |
+| SYNC-001 | **Optional Sync:** Cloud synchronization must be strictly optional. | High | Ensures the app remains fully usable for users who prefer not to create accounts or use data. | A user can use all core features indefinitely without ever signing in or enabling sync. |
+| SYNC-002 | **Local Source of Truth during Offline:** The local database is the sole source of truth when offline; the app must never block progress waiting for network. | High | Maintains the offline-first user experience. | No "waiting for network" spinners or blocks appear during core flows when offline. |
+| SYNC-003 | **Conflict Resolution:** Sync engine resolves conflicts, defaulting to merging progress or last-write-wins. | High | Ensures data integrity across devices. | Syncing after offline progress resolves conflicts without crashing, preferring the most recent change. |
+| SYNC-004 | **Sync State Visibility:** The app must provide an accessible way to check sync status (synced, pending, offline). | Medium | Allows users to confirm if their data is backed up. | Screen reader can announce the current sync state in settings. |
+| SYNC-005 | **Failure Tolerance:** Failed sync operations must queue for later background retry without interrupting the user. | High | Network instability shouldn't ruin the learning experience. | Disconnecting during a sync attempt results in a silent background queueing, not an intrusive modal. |
 
 ---
 
@@ -170,3 +181,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | 2026-06-28 | 0.2 | Jules | Added Functional Requirements (Phase 09) |
 | 2026-06-28 | 0.3 | Jules | Added Non-Functional Requirements (Phase 10) |
 | 2026-06-28 | 0.4 | Jules | Added Accessibility Requirements (Phase 11) |
+| 2026-06-28 | 0.5 | Jules | Added Offline-First and Sync Requirements (Phase 12) |
