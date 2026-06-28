@@ -12,6 +12,8 @@ Current documents:
 - [Project Charter](project-charter.md)
 - [Vision Review](vision-review.md)
 - [Stakeholder and User Model](stakeholder-user-model.md)
+- [Glossary](glossary.md)
+- [Domain Model](domain-model.md)
 
 Future documents expected here include:
 
