@@ -119,9 +119,16 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 12. Audio and Soundscape Requirements (AUD)
 
+*See [Audio and Soundscape Requirements](audio-soundscape-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| AUD-001 | [Placeholder] | | | |
+| AUD-001 | **Asset Format & Quality:** Audio assets must be MP3 or Ogg Vorbis, targeting 64-96kbps to balance clarity and file size. | High | Meets NFR-004 storage limits while preserving pronunciation nuances. | App successfully plays MP3/Ogg files and sizes meet constraints. |
+| AUD-002 | **Soundscape Manifest:** The learning experience is driven by a JSON manifest defining a deterministic sequence of audio events, explicit timings, and spatial cues. | High | Ensures predictable, offline-capable playback without AI generation. | App plays a sequence defined in JSON with correct timing and stereo panning. |
+| AUD-003 | **Accessible Playback Controls:** Users must have granular control (Play, Pause, Skip +/- 10s, segment skip) and speed adjustments (0.5x to 1.5x, pitch-preserved). | High | Allows users to learn at their own pace. | Controls adjust playback correctly; speed changes do not alter pitch. |
+| AUD-004 | **Screen Reader Audio Focus:** Playback must duck or pause appropriately when TalkBack/VoiceOver announcements occur. | High | Essential for Total Blind users to retain control and hear system feedback. | Learning audio ducks/pauses when a screen reader announcement is triggered. |
+| AUD-005 | **Recording Constraints:** Microphone recording must be stored temporarily, strictly limited in length (e.g., 30s), use an optimal format (e.g., 16kHz WAV), and be aggressively deleted after use. | High | Prevents storage exhaustion and device overheating on low-end hardware. | Temp files are verified deleted after scoring; recordings cut off at 30s limit. |
+| AUD-006 | **Mandatory Transcripts:** Every speech audio asset MUST have a corresponding textual transcript linkable in the soundscape manifest. | High | Supports Low Vision users and provides textual fallbacks. | All manifest-driven speech assets have accessible text equivalents. |
 
 ## 13. Content and Curriculum Requirements (CONT)
 
@@ -195,3 +202,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | 2026-06-28 | 0.4 | Jules | Added Accessibility Requirements (Phase 11) |
 | 2026-06-28 | 0.5 | Jules | Added Offline-First and Sync Requirements (Phase 12) |
 | 2026-06-28 | 0.6 | Jules | Added Content and Curriculum Requirements (Phase 13) |
+| 2026-06-28 | 0.7 | Jules | Added Audio and Soundscape Requirements (Phase 14) |
