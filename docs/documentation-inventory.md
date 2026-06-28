@@ -41,7 +41,7 @@ This document provides a complete inventory of all required documents for the Au
 | 18 | AI Tutor Requirements | `docs/ai-tutor-requirements.md` | Missing | Jules | Speech Reqs |
 | 19 | Security, Privacy, and Data Requirements | `docs/security-privacy-data-requirements.md` | Done | Jules | AI Tutor Reqs |
 | 20 | Requirements Traceability Matrix | `docs/requirements-traceability-matrix.md` | Done | Jules | All Requirements |
-| 21 | Architecture Principles and Constraints | `docs/architecture-principles.md` | Missing | Jules | Requirements Traceability |
+| 21 | Architecture Principles and Constraints | `docs/architecture-principles.md` | Done | Jules | Requirements Traceability |
 | 22 | Software Architecture Document | `docs/software-architecture-document.md` | Missing | Jules | Architecture Principles |
 | 23 | Modular Engine Architecture | `docs/modular-engine-architecture.md` | Missing | Jules | SAD |
 | 24 | Data Architecture and SQLite Strategy | `docs/data-architecture-sqlite-strategy.md` | Missing | Jules | Modular Engine Arch |
@@ -75,10 +75,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 8
-- **Missing / Pending**: 42
+- **Completed**: 9
+- **Missing / Pending**: 41
 
 ## Next Steps
 
-1. Create `docs/risk-register.md` (Phase 07).
-2. Establish the SRS Framework (Phase 08).
+1. Create `docs/software-architecture-document.md` (Phase 20).
