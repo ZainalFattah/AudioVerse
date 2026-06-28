@@ -70,7 +70,14 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| FR-001 | [Placeholder] | | | |
+| FR-001 | **Onboarding:** The app shall provide an introductory flow guiding the user through initial setup and permission requests (e.g., microphone). | High | Ensures the user understands the app's purpose and grants necessary permissions before starting. | User can complete setup and grant permissions using TalkBack/VoiceOver; permissions are correctly saved. |
+| FR-002 | **Lesson Catalog:** The app shall display a navigable list of locally available Courses, Units, and Lessons. | High | Users must be able to select what they want to learn from available content. | Catalog is fully navigable with screen readers; catalog correctly reflects available local content packages. |
+| FR-003 | **Audio Playback:** The app shall provide controls to play, pause, and resume audio from Lessons and Soundscapes. | High | Core to the audio-first learning experience. | Audio plays correctly; pause/resume works reliably; playback state changes are audibly announced to screen readers. |
+| FR-004 | **Speaking Practice:** The app shall allow users to record their speech for a practice attempt upon explicit user command. | High | Necessary for active language and pronunciation practice. | User can start and stop recording using accessible controls; recording is captured and passed to the assessment pipeline. |
+| FR-005 | **Feedback Delivery:** The app shall deliver the result of a pronunciation assessment via text and audio feedback. | High | Users need to know how well they pronounced the target phrase to improve. | Feedback is generated after a recording; screen readers read the feedback automatically or upon focus. |
+| FR-006 | **Progress Tracking:** The app shall record the completion status and scores of Lessons and Units to a local database. | High | Allows users to track their learning journey across sessions without relying on the cloud. | Completing a lesson updates its status locally; progress persists after app restart. |
+| FR-007 | **Settings Management:** The app shall allow users to configure preferences such as playback speed and optional features (e.g., AI Tutor enablement). | Medium | Enhances usability and allows toggling of experimental or resource-intensive modular features. | Settings changes are saved locally and applied immediately to subsequent app usage. |
+| FR-008 | **Content Package Management:** The app shall allow users to view downloaded content packages and delete them to free up space. | Medium | Essential for target low-end devices with limited storage capacity. | User can see a list of installed packages and successfully delete one, which removes it from local storage and the catalog. |
 
 ## 9. Non-Functional Requirements (NFR)
 
@@ -146,3 +153,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | Date | Version | Author | Changes |
 | --- | --- | --- | --- |
 | 2026-06-28 | 0.1 | Jules | Initial SRS Framework creation (Phase 08) |
+| 2026-06-28 | 0.2 | Jules | Added Functional Requirements (Phase 09) |
