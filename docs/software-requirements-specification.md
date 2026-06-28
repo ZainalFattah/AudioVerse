@@ -143,15 +143,28 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 14. Speech Recognition Requirements (SR)
 
+*See [Speech and Pronunciation Requirements](speech-pronunciation-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| SR-001 | [Placeholder] | | | |
+| SR-001 | **ASR Independence:** The Speech Recognition engine must be implemented behind a defined interface (adapter) that isolates it from the core application logic. | High | Allows swapping engines without rewriting the app. | Code review verifies ASR is accessed only via an adapter interface. |
+| SR-002 | **Offline Operation:** The ASR engine must operate 100% locally on the device without requiring an active internet connection. | High | Essential for the core offline-first mandate. | ASR converts audio to text in airplane mode. |
+| SR-003 | **Expected Input:** The ASR engine must accept standardized, temporary audio formats (e.g., 16kHz WAV, max 30s). | High | Prevents memory exhaustion on low-end devices. | ASR adapter correctly processes a 30s 16kHz WAV file. |
+| SR-004 | **Recognition Output:** The ASR engine must return the transcribed text, and optionally, word-level timestamps and confidence scores. | High | Transcribed text is the minimum requirement for the Pronunciation Engine. | ASR returns a string representing recognized speech. |
+| SR-005 | **Latency Constraint:** The ASR transcription process should complete within a reasonable timeframe (e.g., < 2s for a 5s utterance). | High | High latency degrades the learning loop. | ASR latency is profiled and meets constraints on target benchmark devices. |
+| SR-006 | **Benchmark Mandate:** The choice of primary ASR engine must be deferred until benchmark evidence is collected. | High | Prevents violating low-end device constraints. | An ADR exists documenting ASR selection based on benchmarks. |
 
 ## 15. Pronunciation Assessment Requirements (PRON)
 
+*See [Speech and Pronunciation Requirements](speech-pronunciation-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| PRON-001 | [Placeholder] | | | |
+| PRON-001 | **Assessment Independence:** The Pronunciation Assessment logic must be separate from the ASR engine. | High | Allows for specialized scoring algorithms separate from transcription. | Architecture defines a distinct boundary between ASR and Pronunciation Assessment. |
+| PRON-002 | **Scoring System:** The engine must generate a score (e.g., categorical or percentage) representing pronunciation accuracy. | High | Users need quantifiable feedback. | Engine returns a standardized score for given expected text and user speech. |
+| PRON-003 | **ASR Error Tolerance:** The scoring mechanism must account for common ASR transcription errors (homophones, etc.). | Medium | Prevents unfairly penalizing users for ASR limitations. | Scoring algorithm includes fuzzy matching or phonetic comparison. |
+| PRON-004 | **Feedback Generation:** The system must translate the score into accessible user feedback (text strings and audio cues). | High | Feedback must be accessible to blind/low-vision users. | A score of "Poor" generates a specific text prompt and/or audio sound. |
+| PRON-005 | **Uncertainty Handling:** If ASR confidence is very low, feedback should prompt the user to try again. | Medium | Differentiates poor pronunciation from bad audio capture. | Low confidence input results in a "Please try again" prompt. |
 
 ## 16. AI Tutor Requirements (AI)
 
