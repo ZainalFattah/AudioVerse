@@ -92,9 +92,18 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 10. Accessibility Requirements (A11Y)
 
+*See [Accessibility Requirements](accessibility-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| A11Y-001 | [Placeholder] | | | |
+| A11Y-001 | **Screen Reader Compatibility:** All interactive elements, states, and navigation flows must be fully compatible and logically structured for TalkBack (Android) and VoiceOver (iOS). | High | Essential for Total Blind users to operate the app. | The core learning flow can be completed with a screen reader without visual cues; focus order is logical. |
+| A11Y-002 | **Blank Screen Mode:** The app must be fully operable with the screen completely dimmed or turned off. | High | Many Total Blind users navigate with their screens off for privacy and battery saving. | Core learning flow is completable with screen off/dimmed while using a screen reader. |
+| A11Y-003 | **High Contrast Mode:** The app must support a high contrast visual theme that complies with WCAG 2.1 AAA standards. | High | Critical for Low Vision learners who rely on visual interfaces. | High contrast mode can be toggled; contrast ratios are >= 7:1. |
+| A11Y-004 | **Scalable Text:** The application UI must gracefully adapt to OS-level text scaling (up to 200%). | High | Low Vision users often increase system font sizes. | All screens are usable at 200% system font size; no overlapping or hidden text. |
+| A11Y-005 | **Gesture Navigation Support:** The app must support standard accessibility gesture navigation without conflicting with OS-level screen reader gestures. | High | Users rely on swipe gestures to navigate; custom app gestures must not interfere. | Swiping logically moves focus; no custom gestures block TalkBack/VoiceOver defaults. |
+| A11Y-006 | **Audio and Haptic Feedback:** Critical actions must be accompanied by distinct non-intrusive audio and/or haptic cues. | Medium | Provides immediate confirmation without waiting for screen reader speech. | Haptic/audio cues trigger correctly on key interactions; cues can be toggled. |
+| A11Y-007 | **Accessible Error Recovery:** Error messages must be announced immediately by the screen reader, clear, and provide a straightforward way to recover. | High | Blind users cannot visually scan the screen for error icons. | Screen reader announces errors and focus shifts to the recovery action. |
+| A11Y-008 | **Audio-First Prompts:** Instructions should be available via audio, minimizing the need to read text with a screen reader. | Medium | Reduces cognitive load and speeds up learning. | Exercise instructions are spoken naturally before or alongside screen reader focus. |
 
 ## 11. Offline-First Requirements (OFF)
 
@@ -160,3 +169,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | 2026-06-28 | 0.1 | Jules | Initial SRS Framework creation (Phase 08) |
 | 2026-06-28 | 0.2 | Jules | Added Functional Requirements (Phase 09) |
 | 2026-06-28 | 0.3 | Jules | Added Non-Functional Requirements (Phase 10) |
+| 2026-06-28 | 0.4 | Jules | Added Accessibility Requirements (Phase 11) |
