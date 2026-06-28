@@ -59,6 +59,7 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | `SEC` | Security & Privacy | Protection of user data, voice recordings, and permissions. |
 | `SYNC` | Sync | Optional cloud synchronization behavior and conflict resolution. |
 | `TEST` | Test | specific testing criteria and testability needs. |
+| `CONT` | Content | Content packages, curriculum hierarchy, and versioning. |
 
 ## 7. Requirements Traceability Matrix
 
@@ -122,31 +123,42 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | --- | --- | --- | --- | --- |
 | AUD-001 | [Placeholder] | | | |
 
-## 13. Speech Recognition Requirements (SR)
+## 13. Content and Curriculum Requirements (CONT)
+
+*See [Content and Curriculum Requirements](content-curriculum-requirements.md) for full details.*
+
+| ID | Description | Priority | Rationale | Acceptance Criteria |
+| --- | --- | --- | --- | --- |
+| CONT-001 | **Curriculum Hierarchy:** The curriculum must be structured hierarchically (Course -> Unit -> Lesson). | High | Organizes content into a logical, accessible progression. | Database schema successfully models this hierarchy; UI displays it correctly. |
+| CONT-002 | **Lesson Structure:** Lessons must include metadata, audio prompts, target phrases, and full text transcripts. | High | Transcripts are essential for Low Vision users and useful for testing. | A loaded lesson exposes all required fields, including transcripts, to the app layer. |
+| CONT-003 | **Self-Contained Packages:** Content is distributed in self-contained packages requiring no network access once downloaded. | High | Necessary for the offline-first mandate. | App can ingest a content package ZIP and play the lesson entirely offline. |
+| CONT-004 | **Versioning and Migrations:** Content packages must be versioned. Updating a package must not lose user progress. | High | Enables content fixes without punishing the learner's progress. | Ingesting v2 of a package retains the completion status from v1. |
+
+## 14. Speech Recognition Requirements (SR)
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
 | SR-001 | [Placeholder] | | | |
 
-## 14. Pronunciation Assessment Requirements (PRON)
+## 15. Pronunciation Assessment Requirements (PRON)
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
 | PRON-001 | [Placeholder] | | | |
 
-## 15. AI Tutor Requirements (AI)
+## 16. AI Tutor Requirements (AI)
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
 | AI-001 | [Placeholder] | | | |
 
-## 16. Security, Privacy, and Data Requirements (SEC / DATA)
+## 17. Security, Privacy, and Data Requirements (SEC / DATA)
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
 | SEC-001 | [Placeholder] | | | |
 
-## 17. Sync Requirements (SYNC)
+## 18. Sync Requirements (SYNC)
 
 *See [Offline-First Requirements](offline-first-requirements.md) for full details.*
 
@@ -160,20 +172,20 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ---
 
-## 18. Risks
+## 19. Risks
 
 - The major risk during the requirements phase is "scope creep," especially regarding AI functionality and cloud synchronization. These must remain explicitly optional and modular, prioritizing the offline-first core.
 
-## 19. Open Questions
+## 20. Open Questions
 
 - None at this stage. Detailed requirements phases will likely generate specific questions regarding engine limits and content structuring.
 
-## 20. Review Checklist
+## 21. Review Checklist
 
 - [ ] Does the structure map to all required ID categories?
 - [ ] Is the document ready to receive detailed requirements without architectural conflation?
 
-## 21. Change Log
+## 22. Change Log
 
 | Date | Version | Author | Changes |
 | --- | --- | --- | --- |
@@ -182,3 +194,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | 2026-06-28 | 0.3 | Jules | Added Non-Functional Requirements (Phase 10) |
 | 2026-06-28 | 0.4 | Jules | Added Accessibility Requirements (Phase 11) |
 | 2026-06-28 | 0.5 | Jules | Added Offline-First and Sync Requirements (Phase 12) |
+| 2026-06-28 | 0.6 | Jules | Added Content and Curriculum Requirements (Phase 13) |
