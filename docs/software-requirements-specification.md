@@ -182,9 +182,15 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 17. Security, Privacy, and Data Requirements (SEC / DATA)
 
+*See [Security, Privacy, and Data Requirements](security-privacy-data-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| SEC-001 | [Placeholder] | | | |
+| SEC-001 | **Voice Recording Ephemerality:** Voice recordings must be aggressively deleted immediately after processing and never permanently stored or synced. | High | Protects learner privacy and ensures sensitive biometric data is not exposed. | Verification that temporary WAV files are deleted post-assessment. |
+| SEC-002 | **Local-First Storage:** The SQLite database is the absolute source of truth; progress and profile data reside locally by default. | High | Ensures offline reliability and puts users in control of their data. | Disconnecting the network does not impede data storage or access. |
+| SEC-003 | **Opt-In Sync:** Any cloud synchronization must require explicit, informed user consent. | High | Prevents unexpected data transmission and respects user privacy preferences. | Sync is disabled by default; enabling it requires a clear, accessible confirmation step. |
+| SEC-004 | **Data Deletion Control:** Users must have a clear, accessible way to delete all local progress, profile, and downloaded content data. | High | Meets standard privacy expectations (Right to be Forgotten) and helps manage device storage. | A "Delete All Data" option exists and successfully clears the SQLite database and local files. |
+| DATA-001 | **Minimal Telemetry:** If telemetry is collected, it must be anonymous, strictly related to app stability/usage, and opt-in. | Medium | Respects user privacy while allowing for critical bug tracking. | Telemetry payloads contain no PII; collection can be toggled in settings. |
 
 ## 18. Sync Requirements (SYNC)
 
