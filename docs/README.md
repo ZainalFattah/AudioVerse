@@ -8,6 +8,11 @@ The first source of truth is the handbook in:
 jules/JULES_MASTER_DEVELOPMENT_HANDBOOK.md
 ```
 
+Current documents:
+- [Project Charter](project-charter.md)
+- [Vision Review](vision-review.md)
+- [Stakeholder and User Model](stakeholder-user-model.md)
+
 Future documents expected here include:
 
 - Software Requirements Specification
