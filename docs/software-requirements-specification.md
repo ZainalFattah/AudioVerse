@@ -83,7 +83,12 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| NFR-001 | [Placeholder] | | | |
+| NFR-001 | **Device Compatibility:** The app must be installable and functional on Android devices with at least 2GB of RAM (e.g., Android Go devices) and iOS devices supported by the latest two major iOS versions. | High | AudioVerse English targets a diverse user base, including those with older, low-to-mid-range devices. | App successfully installs and passes core functional tests on a benchmark 2GB RAM Android device and older supported iOS devices. |
+| NFR-002 | **Startup Performance:** The app should load to a usable, interactive state (ready for screen reader focus) within 3 seconds on mid-range devices, and 5 seconds on low-end devices. | Medium | Lengthy startup times frustrate visually impaired users and hinder short, frequent learning sessions. | Time-to-interactive metric is under defined limits in benchmark tests. |
+| NFR-003 | **Offline Reliability:** Core learning flows, database reads/writes, and playback must function continuously and identically whether the device is connected to the internet, in airplane mode, or switching between networks. | High | Realizes the fundamental "offline-first" architectural constraint. | App passes a full lesson cycle while internet connection is rapidly toggled on and off without crashing or losing progress state. |
+| NFR-004 | **Storage Efficiency:** Baseline installation of the app (excluding downloaded lesson content packages) must remain under 100MB on disk. | High | Low-end devices often have severe storage constraints. | Release build size (APK/IPA) and installed footprint without cache/content does not exceed 100MB. |
+| NFR-005 | **Battery and Resource Constraints:** The app, during active speaking practice (running audio capture and ASR), must not cause severe thermal throttling or consume more than 15% battery per hour of continuous active use on benchmark mid-range devices. | Medium | ASR and AI models are resource-intensive; they must be optimized or degraded gracefully to avoid draining the user's device. | Battery usage profiling over a 1-hour simulated learning session stays within the 15% limit. |
+| NFR-006 | **Maintainability (Modular Engines):** The Speech Recognition, Pronunciation Assessment, and AI Tutor systems must be implemented using distinct, replaceable interfaces (adapters), rather than being tightly coupled to the core application logic. | High | Essential to prevent vendor lock-in and allow for future upgrades (e.g., swapping Vosk for Whisper.cpp) without rewriting the app. | Architecture/code review verifies that engine logic is hidden behind generic interfaces and can be mocked entirely for tests. |
 
 ## 10. Accessibility Requirements (A11Y)
 
@@ -154,3 +159,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | --- | --- | --- | --- |
 | 2026-06-28 | 0.1 | Jules | Initial SRS Framework creation (Phase 08) |
 | 2026-06-28 | 0.2 | Jules | Added Functional Requirements (Phase 09) |
+| 2026-06-28 | 0.3 | Jules | Added Non-Functional Requirements (Phase 10) |
