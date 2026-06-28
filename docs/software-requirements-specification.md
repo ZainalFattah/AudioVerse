@@ -168,9 +168,17 @@ Requirements in this document follow a standardized ID format to ensure stable t
 
 ## 16. AI Tutor Requirements (AI)
 
+*See [AI Tutor Requirements](ai-tutor-requirements.md) for full details.*
+
 | ID | Description | Priority | Rationale | Acceptance Criteria |
 | --- | --- | --- | --- | --- |
-| AI-001 | [Placeholder] | | | |
+| AI-001 | **Modularity and Replaceability:** The AI Tutor must be implemented behind a defined adapter interface, completely decoupled from core lesson logic. | High | Essential to swap local models, cloud APIs, or rule-based engines without app rewrites. | Architecture review confirms AI Tutor is an isolated module communicating via a standard contract. |
+| AI-002 | **Optional Feature:** The AI Tutor must be strictly optional. Core app functionality must not break when disabled. | High | Ensures the app remains functional for users who prefer structured learning, lack resources, or are offline. | Disabling the AI Tutor hides its entry points and prevents any associated background processes. |
+| AI-003 | **Clear Separation from ASR:** The AI Tutor must not be used for Speech Recognition or Pronunciation Assessment. | High | Prevents architectural conflation; AI should focus on conversation/feedback, not transcription. | AI Tutor only processes strings provided by the ASR adapter. |
+| AI-004 | **Graceful Degradation (Offline):** If cloud-backed, the AI Tutor must fail gracefully with an accessible message when offline. | High | Maintains offline-first reliability. | Attempting an AI conversation offline triggers a clear audio/text message and returns to the lesson. |
+| AI-005 | **Content Safety Guardrails:** The AI Tutor must be restricted to English language learning topics and reject unsafe content. | High | Protects users from harmful content. | Prompting the AI with inappropriate content results in a standard rejection/pivot response. |
+| AI-006 | **Benchmark Requirement (Local AI):** Any local embedded AI model must be benchmarked on target low-end devices before integration. | High | Prevents the AI from crashing the app or draining the battery. | ADR exists approving a local model based on positive benchmark data. |
+| AI-007 | **Accessible Output:** Output from the AI Tutor must be compatible with screen readers and audio playback. | High | Ensures blind and low-vision users can interact with the tutor. | AI responses are spoken aloud naturally or correctly read by TalkBack/VoiceOver. |
 
 ## 17. Security, Privacy, and Data Requirements (SEC / DATA)
 
@@ -216,3 +224,4 @@ Requirements in this document follow a standardized ID format to ensure stable t
 | 2026-06-28 | 0.5 | Jules | Added Offline-First and Sync Requirements (Phase 12) |
 | 2026-06-28 | 0.6 | Jules | Added Content and Curriculum Requirements (Phase 13) |
 | 2026-06-28 | 0.7 | Jules | Added Audio and Soundscape Requirements (Phase 14) |
+| 2026-06-28 | 0.8 | Jules | Added AI Tutor Requirements (Phase 16) |
