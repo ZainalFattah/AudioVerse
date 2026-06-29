@@ -47,7 +47,7 @@ This document provides a complete inventory of all required documents for the Au
 | 24 | Data Architecture and SQLite Strategy | `docs/data-architecture-sqlite-strategy.md` | Complete | Jules | Modular Engine Arch |
 | 25 | Optional Sync Architecture | `docs/optional-sync-architecture.md` | Complete | Jules | Data Arch |
 | 26 | Audio Pipeline Architecture | `docs/audio-pipeline-architecture.md` | Complete | Jules | Sync Arch |
-| 27 | Speech Recognition Benchmark Plan | `docs/speech-recognition-benchmark-plan.md` | Missing | Jules | Audio Arch |
+| 27 | Speech Recognition Benchmark Plan | `docs/speech-recognition-benchmark-plan.md` | Complete | Jules | Audio Arch |
 | 28 | Pronunciation Evaluation Architecture | `docs/pronunciation-evaluation-architecture.md` | Missing | Jules | Speech Benchmark Plan |
 | 29 | AI Tutor Architecture | `docs/ai-tutor-architecture.md` | Missing | Jules | Pronunciation Arch |
 | 30 | Soundscape Asset Architecture | `docs/soundscape-asset-architecture.md` | Missing | Jules | AI Tutor Arch |
@@ -75,9 +75,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 13
-- **Missing / Pending**: 37
+- **Completed**: 14
+- **Missing / Pending**: 36
 
 ## Next Steps
 
-1. Create `docs/speech-recognition-benchmark-plan.md` (Phase 25).
+1. Create `docs/pronunciation-evaluation-architecture.md` (Phase 26).
