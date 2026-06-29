@@ -13,7 +13,7 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **State Management and Navigation Design**: Missing, blocking Performance and Low-End Device Design.
+- **Performance and Low-End Device Design**: Missing, blocking Security and Permission Design.
 
 ## Required Documents Inventory
 
@@ -55,7 +55,7 @@ This document provides a complete inventory of all required documents for the Au
 | 34 | App Module Breakdown | `docs/app-module-breakdown.md` | Complete | Jules | TDD Standard |
 | 35 | Database Design Document | `docs/database-design-document.md` | Complete | Jules | App Module Breakdown |
 | 36 | API and Repository Contracts | `docs/api-repository-contracts.md` | Complete | Jules | Database Design |
-| 37 | State Management and Navigation Design | `docs/state-management-navigation-design.md` | Missing | Jules | API Contracts |
+| 37 | State Management and Navigation Design | `docs/state-management-navigation-design.md` | Complete | Jules | API Contracts |
 | 38 | Performance and Low-End Device Design | `docs/performance-low-end-device-design.md` | Missing | Jules | State Management |
 | 39 | Security and Permission Design | `docs/security-permission-design.md` | Missing | Jules | Performance Design |
 | 40 | UX Research Synthesis | `docs/ux-research-synthesis.md` | Missing | Jules | Security Design |
@@ -73,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 36
-- **Missing / Pending**: 14
+- **Completed**: 37
+- **Missing / Pending**: 13
 
 ## Next Steps
 
-1. Create `docs/state-management-navigation-design.md` (Phase 35).
+1. Create `docs/performance-low-end-device-design.md` (Phase 36).
