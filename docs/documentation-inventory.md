@@ -13,7 +13,7 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **API and Repository Contracts**: Missing, blocking State Management and Navigation Design.
+- **State Management and Navigation Design**: Missing, blocking Performance and Low-End Device Design.
 
 ## Required Documents Inventory
 
@@ -54,7 +54,7 @@ This document provides a complete inventory of all required documents for the Au
 | 33 | Technical Design Document Standard | `docs/technical-design-document-standard.md` | Complete | Jules | ADR Backlog |
 | 34 | App Module Breakdown | `docs/app-module-breakdown.md` | Complete | Jules | TDD Standard |
 | 35 | Database Design Document | `docs/database-design-document.md` | Complete | Jules | App Module Breakdown |
-| 36 | API and Repository Contracts | `docs/api-repository-contracts.md` | Missing | Jules | Database Design |
+| 36 | API and Repository Contracts | `docs/api-repository-contracts.md` | Complete | Jules | Database Design |
 | 37 | State Management and Navigation Design | `docs/state-management-navigation-design.md` | Missing | Jules | API Contracts |
 | 38 | Performance and Low-End Device Design | `docs/performance-low-end-device-design.md` | Missing | Jules | State Management |
 | 39 | Security and Permission Design | `docs/security-permission-design.md` | Missing | Jules | Performance Design |
@@ -73,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 35
-- **Missing / Pending**: 15
+- **Completed**: 36
+- **Missing / Pending**: 14
 
 ## Next Steps
 
-1. Create `docs/api-repository-contracts.md` (Phase 34).
+1. Create `docs/state-management-navigation-design.md` (Phase 35).
