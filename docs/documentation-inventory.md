@@ -13,7 +13,6 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **Pronunciation Evaluation Architecture**: Missing, blocking the AI Tutor Architecture.
 - **AI Tutor Architecture**: Missing, blocking the Soundscape Asset Architecture.
 
 ## Required Documents Inventory
@@ -47,7 +46,7 @@ This document provides a complete inventory of all required documents for the Au
 | 25 | Optional Sync Architecture | `docs/optional-sync-architecture.md` | Complete | Jules | Data Arch |
 | 26 | Audio Pipeline Architecture | `docs/audio-pipeline-architecture.md` | Complete | Jules | Sync Arch |
 | 27 | Speech Recognition Benchmark Plan | `docs/speech-recognition-benchmark-plan.md` | Complete | Jules | Audio Arch |
-| 28 | Pronunciation Evaluation Architecture | `docs/pronunciation-evaluation-architecture.md` | Missing | Jules | Speech Benchmark Plan |
+| 28 | Pronunciation Evaluation Architecture | `docs/pronunciation-evaluation-architecture.md` | Complete | Jules | Speech Benchmark Plan |
 | 29 | AI Tutor Architecture | `docs/ai-tutor-architecture.md` | Missing | Jules | Pronunciation Arch |
 | 30 | Soundscape Asset Architecture | `docs/soundscape-asset-architecture.md` | Missing | Jules | AI Tutor Arch |
 | 31 | Error Handling and Observability Architecture | `docs/error-handling-observability-architecture.md` | Missing | Jules | Soundscape Arch |
@@ -74,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 27
-- **Missing / Pending**: 23
+- **Completed**: 28
+- **Missing / Pending**: 22
 
 ## Next Steps
 
-1. Create `docs/pronunciation-evaluation-architecture.md` (Phase 26).
+1. Create `docs/ai-tutor-architecture.md` (Phase 27).
