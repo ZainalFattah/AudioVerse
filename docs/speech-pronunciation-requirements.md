@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers:
 Last updated: 2026-06-28
 Related documents:
+
 - [Software Requirements Specification (SRS)](software-requirements-specification.md)
 - [Glossary](glossary.md)
 
@@ -16,6 +17,7 @@ This document defines the requirements for Speech Recognition (ASR) and Pronunci
 ## 2. Scope
 
 This document covers:
+
 - Input constraints for user speech.
 - Expected outputs and behavior of the Speech Recognition (ASR) engine.
 - Requirements for the Pronunciation Evaluation engine.
@@ -32,6 +34,7 @@ This document covers:
 ## 4. Requirement Taxonomy
 
 Requirements in this document follow a standardized ID format:
+
 - `SR`: Speech Recognition Requirements
 - `PRON`: Pronunciation Requirements
 

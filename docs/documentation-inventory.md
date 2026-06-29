@@ -13,7 +13,7 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **Decision Register (and initial ADRs)**: Missing, blocking Technical Design Document Standard.
+- **Technical Design Document Standard**: Missing, blocking App Module Breakdown.
 
 ## Required Documents Inventory
 
@@ -50,7 +50,7 @@ This document provides a complete inventory of all required documents for the Au
 | 29 | AI Tutor Architecture | `docs/ai-tutor-architecture.md` | Complete | Jules | Pronunciation Arch |
 | 30 | Soundscape Asset Architecture | `docs/soundscape-asset-architecture.md` | Complete | Jules | AI Tutor Arch |
 | 31 | Error Handling and Observability Architecture | `docs/error-handling-observability-architecture.md` | Complete | Jules | Soundscape Arch |
-| 32 | Decision Register (and initial ADRs) | `docs/decision-register.md`, `decisions/` | Missing | Jules | Error Handling Arch |
+| 32 | Decision Register (and initial ADRs) | `docs/decision-register.md`, `decisions/` | Complete | Jules | Error Handling Arch |
 | 33 | Technical Design Document Standard | `docs/technical-design-document-standard.md` | Missing | Jules | ADR Backlog |
 | 34 | App Module Breakdown | `docs/app-module-breakdown.md` | Missing | Jules | TDD Standard |
 | 35 | Database Design Document | `docs/database-design-document.md` | Missing | Jules | App Module Breakdown |
@@ -73,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 31
-- **Missing / Pending**: 19
+- **Completed**: 32
+- **Missing / Pending**: 18
 
 ## Next Steps
 
-1. Create `docs/decision-register.md` and initial ADRs in `decisions/` (Phase 30).
+1. Create `docs/technical-design-document-standard.md` (Phase 31).

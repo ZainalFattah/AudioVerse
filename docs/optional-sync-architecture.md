@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers: User
 Last updated: 2026-06-28
 Related documents:
+
 - [Data Architecture and SQLite Strategy](data-architecture-sqlite-strategy.md)
 - [Offline-First Requirements](offline-first-requirements.md)
 - [Software Architecture Document](software-architecture-document.md)

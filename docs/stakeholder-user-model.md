@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers:
 Last updated: 2026-06-28
 Related documents:
+
 - docs/project-charter.md
 - jules/JULES_MASTER_DEVELOPMENT_HANDBOOK.md
 
@@ -60,16 +61,19 @@ The purpose of this document is to define the users, stakeholders, personas, con
 ## Accessibility Contexts and Device Constraints
 
 ### Device Baseline
+
 - **Hardware:** Low-to-mid-range smartphones (e.g., 2GB-4GB RAM, limited CPU).
 - **Storage:** Limited available storage space, meaning audio content packages must be reasonably sized and manageable.
 - **Network:** Intermittent or entirely unavailable internet connectivity, making an offline-first architecture critical.
 
 ### Usage Contexts
+
 1. **Audio-First Navigation:** Users will often navigate without looking at the screen. The app must provide immediate, descriptive audio and haptic feedback for all state changes (e.g., "Recording started," "Answer submitted").
 2. **Gesture Independence:** The application must not introduce custom multi-finger gestures that override or conflict with standard TalkBack (Android) or VoiceOver (iOS) system gestures.
 3. **Environmental Noise:** Users might be in noisy environments (e.g., public transit). Pronunciation assessment and speech recognition must account for background noise, and learners must be able to adjust audio playback volume independently of screen reader volume if possible.
 
 ## Review Checklist
+
 - [x] Are personas respectful and useful?
 - [x] Are assumptions marked?
 - [x] Are Total Blind and Low Vision users represented with realistic contexts?

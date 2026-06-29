@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers:
 Last updated: 2026-06-28
 Related documents:
+
 - [Project Charter](project-charter.md)
 - [Stakeholder & User Model](stakeholder-user-model.md)
 - [Glossary](glossary.md)
@@ -26,6 +27,7 @@ Features that are explicitly excluded from the MVP (e.g., complex social feature
 ## 3. Audience
 
 The intended audience for this document includes:
+
 - Development and engineering teams (including AI agents) responsible for architecture and implementation.
 - Product managers defining the product roadmap.
 - QA and accessibility testers validating system behavior against requirements.

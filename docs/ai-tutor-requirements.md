@@ -6,23 +6,29 @@ Owner: Jules
 Reviewers:
 Last updated: 2026-06-28
 Related documents:
+
 - [Software Requirements Specification](software-requirements-specification.md)
 
 ## 1. Purpose
+
 This document defines the functional and non-functional requirements for the AI Tutor component of AudioVerse English. The AI Tutor is an optional, experimental feature intended to provide dynamic conversational practice and feedback for learners.
 
 ## 2. Scope
+
 The scope includes defining the interactions, safety guardrails, operational constraints, and architectural boundaries for the AI Tutor. The AI Tutor is explicitly separate from Speech Recognition (ASR) and Pronunciation Assessment.
 
 ## 3. Audience
+
 Engineering team, product managers, and reviewers.
 
 ## 4. Definitions
+
 - **AI Tutor:** A conversational agent that can engage in free-form or guided dialogue with the learner.
 - **Embedded AI:** AI models that run entirely on the local device without network access.
 - **Guardrails:** Rules and mechanisms to prevent the AI from generating inappropriate, unsafe, or off-topic content.
 
 ## 5. Assumptions
+
 - Running Large Language Models (LLMs) locally on low-end target devices (2GB RAM) is currently unfeasible for complex tasks.
 - If implemented locally, the AI Tutor will likely rely on small, quantized models (e.g., Llama.cpp style) or rule-based fallback mechanisms.
 - Cloud-based AI APIs (e.g., OpenAI, Anthropic) may be used if connectivity is available and user consent is granted.
@@ -40,24 +46,29 @@ Engineering team, product managers, and reviewers.
 | AI-007 | **Accessible Output:** Output from the AI Tutor must be compatible with screen readers and seamlessly integrated into the audio playback pipeline. | High | Ensures blind and low-vision users can interact with the tutor. | AI responses are spoken aloud naturally or correctly read by TalkBack/VoiceOver. |
 
 ## 7. Risks
+
 - Embedding a useful language model locally on a 2GB RAM device while keeping the app under 100MB is highly speculative.
 - Cloud APIs introduce latency and break the strict offline-first experience if relied upon too heavily.
 
 ## 8. Open Questions
+
 - Is a rule-based or template-based "Tutor" sufficient for the MVP instead of a true generative AI model?
 - How will TTS (Text-to-Speech) for the AI Tutor be handled (local OS TTS vs. generated audio)?
 
 ## 9. Acceptance Criteria
+
 - AI Tutor requirements clearly separate it from core app functions.
 - The optional and modular nature of the AI Tutor is enforced.
 - Safety and offline behaviors are defined.
 
 ## 10. Review Checklist
+
 - [ ] Is the AI Tutor clearly optional?
 - [ ] Are low-end device constraints explicitly mentioned?
 - [ ] Is it separate from ASR and Pronunciation Assessment?
 
 ## 11. Change Log
+
 | Date | Version | Author | Changes |
 | --- | --- | --- | --- |
 | 2026-06-28 | 0.1 | Jules | Initial Draft for Phase 16 |

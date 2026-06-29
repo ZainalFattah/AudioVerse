@@ -14,20 +14,23 @@ The application handles the following data types:
 | **Learner Profile** | User preferences, accessibility settings (e.g., TalkBack compatibility, text scaling), and basic demographic data if provided. | Personal |
 | **Learning Progress** | Lesson completion status, pronunciation scores, and attempt history. | Personal |
 | **Content Packages** | Downloaded educational materials (audio files, JSON manifests, transcripts). | Public/App Data |
-| **Telemetry (Optional)**| Crash reports and basic usage analytics. | Anonymous |
+| **Telemetry (Optional)** | Crash reports and basic usage analytics. | Anonymous |
 
 ## 3. Storage and Deletion Policies
 
 ### 3.1 Voice Recordings (Strict Policy)
+
 - **Storage:** Voice recordings are stored in a temporary cache directory as 16kHz WAV files.
 - **Duration:** Recordings are strictly capped at 30 seconds per attempt.
 - **Deletion:** Recordings must be aggressively and automatically deleted immediately after the local pronunciation assessment or speech recognition process completes. They are never stored permanently and are never synced to the cloud.
 
 ### 3.2 Learner Profile and Progress
+
 - **Storage:** Stored locally in a secure SQLite database. This database is the absolute source of truth when offline.
 - **Deletion:** Users must have a clear, accessible option within the app settings to completely delete all profile and progress data, effectively resetting the application.
 
 ### 3.3 Content Packages
+
 - **Storage:** Stored on the local file system. Treated as permanent until explicitly deleted by the user.
 - **Deletion:** Users can manage storage by deleting specific content packages or all downloaded content via the application settings.
 
@@ -41,10 +44,12 @@ The application will request only the minimum required permissions:
 ## 5. Cloud Boundaries and Sync
 
 ### 5.1 Local-First Defaults
+
 - The application operates completely offline by default. No network connection is required to complete core learning flows once content is downloaded.
 - Cloud synchronization (e.g., to Supabase) is strictly opt-in. The app will never silently sync data in the background without explicit user configuration and consent.
 
 ### 5.2 Optional AI Tutor
+
 - If the AI Tutor module relies on a cloud API, explicit user consent must be obtained before any data (text or audio) is sent.
 - The AI Tutor must implement safety guardrails, restricting topics to English language learning and preventing the transmission of PII.
 - If running locally, the AI Tutor must operate within the constraints of low-end devices (e.g., memory limits) without compromising security.
