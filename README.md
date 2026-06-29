@@ -37,4 +37,3 @@ AudioVerse-English/
 ```
 
 The `app/` directory must remain code-empty until the handbook's engineering readiness gates explicitly permit Flutter initialization.
-

@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers: User
 Last updated: 2026-06-28
 Related documents:
+
 - [Software Architecture Document](software-architecture-document.md)
 - [Architecture Principles](architecture-principles.md)
 - [Software Requirements Specification](software-requirements-specification.md)
@@ -17,6 +18,7 @@ This document defines the conceptual interfaces for the core engines in AudioVer
 ## 2. Scope
 
 This document specifies:
+
 - The abstract interfaces (contracts) for each modular engine.
 - The responsibilities of the adapters implementing these interfaces.
 - The required failure and offline degradation behaviors.
@@ -36,6 +38,7 @@ This document specifies:
 **Responsibility:** Converts spoken audio into text locally on the device.
 
 **Conceptual Interface (`ISpeechRecognitionEngine`):**
+
 - **Inputs:** `AudioFilePath` (path to a temporary 16kHz WAV file, max 30s).
 - **Outputs:** `TranscriptionResult` containing:
   - `transcribedText` (String)
@@ -47,6 +50,7 @@ This document specifies:
   - `TranscriptionFailedError` (e.g., audio too noisy)
 
 **Adapter Responsibilities:**
+
 - The adapter (e.g., `VoskAdapter` or `WhisperAdapter`) must load the local acoustic model.
 - It must parse the specific output format of the underlying library into the standardized `TranscriptionResult`.
 - It must ensure the engine operates within the defined latency constraints.
@@ -56,6 +60,7 @@ This document specifies:
 **Responsibility:** Evaluates a learner's transcribed speech against the expected text and generates a score. This is distinctly separate from the ASR engine.
 
 **Conceptual Interface (`IPronunciationEvaluationEngine`):**
+
 - **Inputs:**
   - `expectedText` (String)
   - `actualTranscription` (TranscriptionResult from ASR)
@@ -67,6 +72,7 @@ This document specifies:
   - `EvaluationFailedError`
 
 **Adapter Responsibilities:**
+
 - Implement fuzzy matching or phonetic comparison to tolerate common ASR transcription errors (e.g., homophones).
 - Handle scenarios where the ASR `confidenceScore` is too low, returning a feedback category like `Unclear` (prompting a retry) instead of penalizing the user's pronunciation score.
 
@@ -75,6 +81,7 @@ This document specifies:
 **Responsibility:** Provides conversational practice and feedback. This is an optional, modular engine.
 
 **Conceptual Interface (`IAITutorEngine`):**
+
 - **Inputs:**
   - `userPrompt` (String, transcribed from ASR)
   - `conversationContext` (Object, recent conversation history)
@@ -87,6 +94,7 @@ This document specifies:
   - `ModelLoadError` (if local model fails)
 
 **Adapter Responsibilities:**
+
 - Implement strict English-learning guardrails, rejecting off-topic or unsafe prompts.
 - Implement graceful degradation: if the engine is offline-incapable and the network drops, the adapter must catch this and return an `EngineUnavailableOfflineError` that the domain layer can handle cleanly.
 
@@ -95,6 +103,7 @@ This document specifies:
 **Responsibility:** Orchestrates playback of structured soundscapes and records temporary audio for speaking practice.
 
 **Conceptual Interface (`IAudioPipelineEngine`):**
+
 - **Inputs:**
   - Playback: `SoundscapeManifest` (JSON struct), `Action` (Play, Pause, Stop).
   - Recording: `Action` (Start, Stop), `OutputConfig` (16kHz WAV).
@@ -107,6 +116,7 @@ This document specifies:
   - `RecordingHardwareError`
 
 **Adapter Responsibilities:**
+
 - Ensure recording strictly halts at the 30-second cap.
 - Manage spatial mixing of audio layers based on the soundscape manifest.
 - Handle system audio interruptions (e.g., incoming calls, TalkBack spoken feedback) gracefully.
@@ -116,6 +126,7 @@ This document specifies:
 **Responsibility:** Optionally synchronizes local SQLite progress to a remote backend.
 
 **Conceptual Interface (`ICloudSyncEngine`):**
+
 - **Inputs:**
   - `localChanges` (List of localized data transaction records)
 - **Outputs:** `SyncResult` containing:
@@ -126,6 +137,7 @@ This document specifies:
   - `AuthenticationError`
 
 **Adapter Responsibilities:**
+
 - Ensure all sync attempts happen on a background thread.
 - If offline, the adapter must immediately return `NetworkUnavailableError` without blocking or retrying infinitely on the main thread. The core app relies on the local database and ignores this error, queuing the sync for later.
 - Handle data conflicts using the last-write-wins (timestamp-based) resolution strategy.
@@ -133,6 +145,7 @@ This document specifies:
 ## 5. Testing Strategy
 
 The modular engine interfaces enable robust testing:
+
 - **Domain Logic Tests:** The core application logic can be unit-tested by injecting Mock adapters that simulate engine behaviors (e.g., a `MockASRAdapter` that instantly returns pre-defined text).
 - **Adapter Integration Tests:** Adapters can be tested in isolation to verify they correctly translate specific library outputs (e.g., testing the `VoskAdapter` against a known audio file to ensure it outputs a valid `TranscriptionResult`).
 - **Failure Simulation:** Mocks will be used to simulate network drops for the AI Tutor and Sync adapters to verify the core app degrades gracefully and maintains the offline-first experience.

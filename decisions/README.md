@@ -9,4 +9,3 @@ ADR filenames should use this format:
 ```text
 ADR-0001-short-decision-title.md
 ```
-

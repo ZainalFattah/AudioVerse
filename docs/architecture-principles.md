@@ -6,6 +6,7 @@ Owner: Jules
 Reviewers: User
 Last updated: 2026-06-28
 Related documents:
+
 - [Software Requirements Specification](software-requirements-specification.md)
 - [Jules Master Development Handbook](../jules/JULES_MASTER_DEVELOPMENT_HANDBOOK.md)
 
@@ -16,32 +17,44 @@ This document outlines the foundational architecture principles, strict constrai
 ## 2. Core Architecture Principles
 
 ### 2.1 Accessibility as a Foundational Attribute
+
 Accessibility is not an afterthought or a UI-layer enhancement; it is a primary quality attribute that drives architectural choices.
+
 - **Principle**: The system must inherently support audio-first navigation, deterministic focus flow, and non-visual feedback mechanisms at all layers, not just the presentation layer.
 - **Implication**: State management and navigation architectures must explicitly support screen reader (TalkBack/VoiceOver) logical flows, high-contrast states, and blank-screen mode toggles.
 
 ### 2.2 Strict Offline-First Paradigm
+
 The application must treat the local device as the primary, authoritative environment.
+
 - **Principle**: All core learning flows, data persistence, and content delivery must function continuously and identically without an internet connection.
 - **Implication**: The local SQLite database is the absolute source of truth. Any cloud synchronization must act only as a background, optional enhancement that degrades silently when offline.
 
 ### 2.3 Modular and Replaceable Engines
+
 The application must not be tightly coupled to specific third-party technologies or ML models for core capabilities.
+
 - **Principle**: High-risk or rapidly evolving components—specifically Speech Recognition (ASR), Pronunciation Assessment, AI Tutors, Audio Playback, and Cloud Sync—must be hidden behind abstract adapter interfaces.
 - **Implication**: We design to interfaces, not concrete implementations. Swapping Vosk for Whisper.cpp, or replacing a local AI model with a cloud API, must require changing only the adapter, not the core business logic.
 
 ### 2.4 Performance and Resource Conservatism
+
 The application must respect the limitations of target devices (e.g., 2GB RAM, older CPUs, limited battery).
+
 - **Principle**: Memory, storage, and battery usage must be strictly budgeted and continuously profiled.
 - **Implication**: Ephemeral data (like temporary voice recordings) must be aggressively deleted. Background processes must be minimized. Heavy compute tasks (like ASR) must be optimized to prevent thermal throttling and battery drain.
 
 ### 2.5 Privacy by Default
+
 Given the sensitivity of voice data, the system must employ strict data protection strategies natively.
+
 - **Principle**: User data, particularly voice recordings, must not leave the device without explicit, informed consent.
 - **Implication**: Voice recordings are strictly ephemeral and processed locally. Syncing must be opt-in, and the user must have full control to clear all local data.
 
 ### 2.6 Predictable Testability
+
 The architecture must support comprehensive, automated testing across all layers, especially for offline logic and accessibility state.
+
 - **Principle**: Business rules, engine interfaces, and state logic must be testable in isolation without relying on the Flutter UI or real device hardware.
 - **Implication**: Extensive use of dependency injection and clear separation of presentation from domain logic is mandatory.
 
