@@ -13,9 +13,8 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **Risk Register**: Missing, blocking the start of the SRS Framework.
-- **SRS (Software Requirements Specification)**: Missing, blocking all architecture and downstream requirements.
-- **SAD (Software Architecture Document)**: Complete.
+- **Pronunciation Evaluation Architecture**: Missing, blocking the AI Tutor Architecture.
+- **AI Tutor Architecture**: Missing, blocking the Soundscape Asset Architecture.
 
 ## Required Documents Inventory
 
@@ -29,19 +28,19 @@ This document provides a complete inventory of all required documents for the Au
 | 6 | Glossary | `docs/glossary.md` | Complete | Jules | Stakeholder Model |
 | 7 | Domain Model | `docs/domain-model.md` | Complete | Jules | Glossary |
 | 8 | Documentation Inventory | `docs/documentation-inventory.md` | Complete | Jules | Domain Model |
-| 9 | Risk Register v1 | `docs/risk-register.md` | Missing | Jules | Documentation Inventory |
-| 10 | SRS Framework | `docs/software-requirements-specification.md` | Missing | Jules | Risk Register |
-| 11 | Functional Requirements | `docs/software-requirements-specification.md` | Missing | Jules | SRS Framework |
-| 12 | Non-Functional Requirements | `docs/software-requirements-specification.md` | Missing | Jules | Functional Requirements |
-| 13 | Accessibility Requirements | `docs/accessibility-requirements.md` | Missing | Jules | NFRs |
-| 14 | Offline-First Requirements | `docs/offline-first-requirements.md` | Missing | Jules | Accessibility Reqs |
-| 15 | Content and Curriculum Requirements | `docs/content-curriculum-requirements.md` | Missing | Jules | Offline Reqs |
-| 16 | Audio and Soundscape Requirements | `docs/audio-soundscape-requirements.md` | Missing | Jules | Content Reqs |
-| 17 | Speech and Pronunciation Requirements | `docs/speech-pronunciation-requirements.md` | Missing | Jules | Audio Reqs |
-| 18 | AI Tutor Requirements | `docs/ai-tutor-requirements.md` | Missing | Jules | Speech Reqs |
-| 19 | Security, Privacy, and Data Requirements | `docs/security-privacy-data-requirements.md` | Done | Jules | AI Tutor Reqs |
-| 20 | Requirements Traceability Matrix | `docs/requirements-traceability-matrix.md` | Done | Jules | All Requirements |
-| 21 | Architecture Principles and Constraints | `docs/architecture-principles.md` | Done | Jules | Requirements Traceability |
+| 9 | Risk Register v1 | `docs/risk-register.md` | Complete | Jules | Documentation Inventory |
+| 10 | SRS Framework | `docs/software-requirements-specification.md` | Complete | Jules | Risk Register |
+| 11 | Functional Requirements | `docs/software-requirements-specification.md` | Complete | Jules | SRS Framework |
+| 12 | Non-Functional Requirements | `docs/software-requirements-specification.md` | Complete | Jules | Functional Requirements |
+| 13 | Accessibility Requirements | `docs/accessibility-requirements.md` | Complete | Jules | NFRs |
+| 14 | Offline-First Requirements | `docs/offline-first-requirements.md` | Complete | Jules | Accessibility Reqs |
+| 15 | Content and Curriculum Requirements | `docs/content-curriculum-requirements.md` | Complete | Jules | Offline Reqs |
+| 16 | Audio and Soundscape Requirements | `docs/audio-soundscape-requirements.md` | Complete | Jules | Content Reqs |
+| 17 | Speech and Pronunciation Requirements | `docs/speech-pronunciation-requirements.md` | Complete | Jules | Audio Reqs |
+| 18 | AI Tutor Requirements | `docs/ai-tutor-requirements.md` | Complete | Jules | Speech Reqs |
+| 19 | Security, Privacy, and Data Requirements | `docs/security-privacy-data-requirements.md` | Complete | Jules | AI Tutor Reqs |
+| 20 | Requirements Traceability Matrix | `docs/requirements-traceability-matrix.md` | Complete | Jules | All Requirements |
+| 21 | Architecture Principles and Constraints | `docs/architecture-principles.md` | Complete | Jules | Requirements Traceability |
 | 22 | Software Architecture Document | `docs/software-architecture-document.md` | Complete | Jules | Architecture Principles |
 | 23 | Modular Engine Architecture | `docs/modular-engine-architecture.md` | Complete | Jules | SAD |
 | 24 | Data Architecture and SQLite Strategy | `docs/data-architecture-sqlite-strategy.md` | Complete | Jules | Modular Engine Arch |
@@ -75,8 +74,8 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 14
-- **Missing / Pending**: 36
+- **Completed**: 27
+- **Missing / Pending**: 23
 
 ## Next Steps
 
