@@ -13,7 +13,7 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **App Module Breakdown**: Missing, blocking Database Design Document.
+- **Database Design Document**: Missing, blocking API and Repository Contracts.
 
 ## Required Documents Inventory
 
@@ -52,7 +52,7 @@ This document provides a complete inventory of all required documents for the Au
 | 31 | Error Handling and Observability Architecture | `docs/error-handling-observability-architecture.md` | Complete | Jules | Soundscape Arch |
 | 32 | Decision Register (and initial ADRs) | `docs/decision-register.md`, `decisions/` | Complete | Jules | Error Handling Arch |
 | 33 | Technical Design Document Standard | `docs/technical-design-document-standard.md` | Complete | Jules | ADR Backlog |
-| 34 | App Module Breakdown | `docs/app-module-breakdown.md` | Missing | Jules | TDD Standard |
+| 34 | App Module Breakdown | `docs/app-module-breakdown.md` | Complete | Jules | TDD Standard |
 | 35 | Database Design Document | `docs/database-design-document.md` | Missing | Jules | App Module Breakdown |
 | 36 | API and Repository Contracts | `docs/api-repository-contracts.md` | Missing | Jules | Database Design |
 | 37 | State Management and Navigation Design | `docs/state-management-navigation-design.md` | Missing | Jules | API Contracts |
@@ -73,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 33
-- **Missing / Pending**: 17
+- **Completed**: 34
+- **Missing / Pending**: 16
 
 ## Next Steps
 
-1. Create `docs/app-module-breakdown.md` (Phase 32).
+1. Create `docs/database-design-document.md` (Phase 33).
