@@ -13,7 +13,7 @@ This document provides a complete inventory of all required documents for the Au
 
 ## Missing Documents and Blockers
 
-- **Soundscape Asset Architecture**: Missing, blocking Error Handling and Observability Architecture.
+- **Error Handling and Observability Architecture**: Missing, blocking Decision Register and initial ADRs.
 
 ## Required Documents Inventory
 
@@ -48,7 +48,7 @@ This document provides a complete inventory of all required documents for the Au
 | 27 | Speech Recognition Benchmark Plan | `docs/speech-recognition-benchmark-plan.md` | Complete | Jules | Audio Arch |
 | 28 | Pronunciation Evaluation Architecture | `docs/pronunciation-evaluation-architecture.md` | Complete | Jules | Speech Benchmark Plan |
 | 29 | AI Tutor Architecture | `docs/ai-tutor-architecture.md` | Complete | Jules | Pronunciation Arch |
-| 30 | Soundscape Asset Architecture | `docs/soundscape-asset-architecture.md` | Missing | Jules | AI Tutor Arch |
+| 30 | Soundscape Asset Architecture | `docs/soundscape-asset-architecture.md` | Complete | Jules | AI Tutor Arch |
 | 31 | Error Handling and Observability Architecture | `docs/error-handling-observability-architecture.md` | Missing | Jules | Soundscape Arch |
 | 32 | Decision Register (and initial ADRs) | `docs/decision-register.md`, `decisions/` | Missing | Jules | Error Handling Arch |
 | 33 | Technical Design Document Standard | `docs/technical-design-document-standard.md` | Missing | Jules | ADR Backlog |
@@ -73,9 +73,9 @@ This document provides a complete inventory of all required documents for the Au
 ## Status Summary
 
 - **Total Documents Required**: 50
-- **Completed**: 29
-- **Missing / Pending**: 21
+- **Completed**: 30
+- **Missing / Pending**: 20
 
 ## Next Steps
 
-1. Create `docs/soundscape-asset-architecture.md` (Phase 28).
+1. Create `docs/error-handling-observability-architecture.md` (Phase 29).
